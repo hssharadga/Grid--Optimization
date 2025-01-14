@@ -8,6 +8,7 @@ Created on Mon Nov 11 11:20:32 2024
 @author: hussein.sharadga
 """
 
+# About: uptime & downtime   different formulations
 
 import gurobipy as gp
 from gurobipy import GRB
