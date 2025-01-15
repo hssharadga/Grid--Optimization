@@ -41,7 +41,10 @@ for i in range(n):
     model.addConstr(x[i, i] == 0, "same")
 
 # Add MTZ subtour elimination constraints
-for i in range(1, n):
+for i in range(1, n): # index start at 1 so u[0]=0  and start at 0 vertex,
+                      # the next u takes 0 and then the next u takes 1 and
+                      # the next takes 2, and so.
+                      # i.e., u takes the value of zero twice.
     for j in range(1, n):
         if i != j:
             model.addConstr(u[i] - u[j] + n * x[i, j] <= n - 1, f"SubtourElim_{i}_{j}")
@@ -74,6 +77,9 @@ c = [[math.dist(coordinates[i], coordinates[j]) for j in range(n)] for i in rang
 
 # Create the model
 model = Model("TSP")
+
+# Suppress Gurobi output
+model.setParam("OutputFlag", 0)
 
 # Add variables
 x = model.addVars(n, n, vtype=GRB.BINARY, name="x")
@@ -111,11 +117,19 @@ def find_subtours(vals):
 # Callback function for subtour elimination
 def subtour_elim(model, where):
     if where == GRB.Callback.MIPSOL:
+        #print('here we go!',GRB.Callback.MIPSOL)
+        #print(where == GRB.Callback.MIPSOL)
         vals = model.cbGetSolution(x)
         tours = find_subtours(vals)
+        #print('here we go:',tours)
         for tour in tours:
-            if len(tour) < n:
+            if len(tour) < n:   # If the trip does not pass every node,
+                                # add a constraint to make the solution infeasible.
                 model.cbLazy(sum(x[i, j] for i in tour for j in tour) <= len(tour) - 1)
+
+
+
+
 
 
 # Set parameters and solve the model
