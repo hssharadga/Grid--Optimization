@@ -6,8 +6,7 @@ Created on Wed Jan 15 00:54:48 2025
 @author: hussein.sharadga
 """
 
-# That is might be usfull to reduce the size of the MIP problem
-# by not introducing all constraints upfront.
+# That might be useful to reduce the size of the MIP problem by not introducing all constraints upfront.
 
 from gurobipy import Model, GRB
 import math
