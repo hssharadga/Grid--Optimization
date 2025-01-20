@@ -6,6 +6,10 @@ Created on Sat Jan 18 04:08:53 2025
 @author: hussein.sharadga
 """
 
+'''
+All devices remain unchanged unless there is a scheduled outage or a must-run condition.
+'''
+
 from gurobipy import Model, GRB
 
 # Create a new model
