@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jan 19 01:12:00 2025
+
+@author: hussein.sharadga
+"""
+
+import gurobipy as gp
+from gurobipy import GRB
+
+
+
+# Formulation 1: using Big M value
+
+
+# intialize the model
+m=gp.Model()
+
+# m.Params.Presolve=0
+# Add variables
+l1=m.addVar(vtype=GRB.BINARY)
+l2=m.addVar(vtype=GRB.BINARY)
+
+s1=m.addVar(vtype='C',lb=1, ub=10)
+s2=m.addVar(vtype='C', lb=5, ub=18)
+
+alpha=2
+beta=3
+
+# Add constraints
+
+M1=100
+M2=100
+m.addConstr(s2-s1<=-alpha+M1*(1-l1))
+
+m.addConstr(s1-s2<=-beta+M2*(1-l2))
+
+m.addConstr(l1+l2==1)
+
+
+
+# set objective function (z)  or (obj) 
+obj=(s1+s2)
+m.setObjective(obj)
+
+
+
+# run the model
+m.optimize()
+
+# Check optimization status
+if m.status == GRB.OPTIMAL:
+    print('Optimal solution found')
+    # Print variable values
+    for var in m.getVars():
+        print(f'{var.varName}: {var.x}')
+    # Print objective value
+    print(f'Objective: {m.objVal}')
+else:
+    print('No solution found')
+
+
+
+
+
+
+
+# Formulation 2: using convex hull fromulation
+
+
+# intialize the model
+m=gp.Model()
+
+# m.Params.Presolve=0
+# Add variables
+l1=m.addVar(vtype=GRB.BINARY)
+l2=m.addVar(vtype=GRB.BINARY)
+
+s1=m.addVar(vtype='C',lb=-GRB.INFINITY)
+s2=m.addVar(vtype='C',lb=-GRB.INFINITY)
+
+
+t11=m.addVar(vtype='C',lb=-GRB.INFINITY)
+t12=m.addVar(vtype='C',lb=-GRB.INFINITY)
+t21=m.addVar(vtype='C',lb=-GRB.INFINITY)
+t22=m.addVar(vtype='C',lb=-GRB.INFINITY)
+
+alpha=2
+beta=3
+
+# Add constraints
+
+
+m.addConstr(s1==t11+t12)
+m.addConstr(s2==t21+t22)
+
+m.addConstr(t21-t11<=-alpha*l1)
+m.addConstr(t12-t22<=-beta*l2)
+
+
+
+# iterate the constraint over i and j
+m.addConstr(1*l1<=t11)
+m.addConstr(10*l1>=t11)
+
+m.addConstr(1*l2<=t12)
+m.addConstr(10*l2>=t12)
+
+
+m.addConstr(5*l1<=t21)
+m.addConstr(18*l1>=t21)
+
+m.addConstr(5*l2<=t22)
+m.addConstr(18*l2>=t22)
+
+
+
+
+m.addConstr(l1+l2==1)
+
+
+
+# set objective function (z)  or (obj) 
+obj=(s1+s2)
+m.setObjective(obj)
+
+
+
+# run the model
+m.optimize()
+
+# Check optimization status
+if m.status == GRB.OPTIMAL:
+    print('Optimal solution found')
+    # Print variable values
+    for var in m.getVars():
+        print(f'{var.varName}: {var.x}')
+    # Print objective value
+    print(f'Objective: {m.objVal}')
+else:
+    print('No solution found')
+
