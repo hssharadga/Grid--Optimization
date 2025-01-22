@@ -12,6 +12,7 @@ from gurobipy import GRB
 
 # Formulation 3
 # This is based on https://or.stackexchange.com/questions/11391/which-of-these-formulations-has-the-tightest-linear-relaxation/12820?noredirect=1#comment27464_12820
+# How to modify this formulation for 4 steps or more?
 
 # intialize the model
 m=gp.Model()
