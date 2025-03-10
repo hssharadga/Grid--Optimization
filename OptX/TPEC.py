@@ -1225,10 +1225,13 @@ if switch2==0:
 
     # on-off, startup, shoutdown
     # (42) & (43)
-    j_su = m.addVars(n_j,n_t,vtype=GRB.BINARY)   
-    j_sd = m.addVars(n_j,n_t,vtype=GRB.BINARY) 
-
-
+    
+    if relax==0:
+        j_su = m.addVars(n_j,n_t,vtype=GRB.BINARY)   
+        j_sd = m.addVars(n_j,n_t,vtype=GRB.BINARY) 
+    else: 
+        j_su = m.addVars(n_j,n_t,vtype='C')   
+        j_sd = m.addVars(n_j,n_t,vtype='C') 
 
     # # (46)-(47)
     for j in range (n_j):

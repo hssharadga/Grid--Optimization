@@ -48,7 +48,7 @@ ax.tick_params(axis='both', colors='black')  # Change tick color to black
 means = df.groupby("Cost Blocks")["Time [mins]"].mean().reset_index()
 # Overlay mean values using a point plot
 sns.pointplot(x="Cost Blocks", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -61,7 +61,7 @@ plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img1.p
 plt.show()
 
 
-
+# %%
 # # # Data preparation
 # data = {
 #     "Cost Blocks": ["Tighter Blocks"] * 7 + ["Original Blocks"] * 7,
@@ -116,7 +116,7 @@ means = df.groupby("Cost Blocks")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Cost Blocks", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -153,7 +153,7 @@ plt.show()
 
 # # Overlay the mean values
 # for i, mean_value in enumerate(mean_values):
-#     plt.text(i, mean_value, f'{mean_value:.2f}', horizontalalignment='center', color='black', weight='bold', fontsize=12)
+#     plt.text(i, mean_value, f'{mean_value:.2f}', horizontalalignment='center', color='red', weight='bold', fontsize=12)
 
 # # Add grid
 # plt.grid(axis="y", linestyle="--", alpha=0.6)
@@ -210,7 +210,7 @@ means = df.groupby("Ramping Constraints")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Ramping Constraints", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -264,7 +264,7 @@ means = df.groupby("Ramping Constraints")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Ramping Constraints", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -313,7 +313,7 @@ means = df.groupby("Switch")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Switch", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -361,7 +361,7 @@ means = df.groupby("Switch")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Switch", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -410,7 +410,7 @@ means = df.groupby("Switch")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Switch", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -466,7 +466,7 @@ means = df.groupby("Switch")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Switch", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -511,7 +511,7 @@ means = df.groupby("Constraints")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Constraints", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -567,7 +567,7 @@ means = df.groupby("Constraints")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Constraints", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -613,7 +613,7 @@ means = df.groupby("Constraints")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Constraints", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -668,7 +668,7 @@ means = df.groupby("Constraints")["Time [mins]"].mean().reset_index()
 
 # Overlay mean values using a point plot
 sns.pointplot(x="Constraints", y="Time [mins]", data=means, join=False, 
-              color='black', markers="x", scale=1)
+              color='red', markers="x", scale=1)
 
 # Customize plot aesthetics
 for spine in ax.spines.values():
@@ -678,4 +678,119 @@ ax.tick_params(axis='both', colors='black')  # Change tick color to black
 
 plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img12.png", dpi=300, bbox_inches="tight")
+plt.show()
+
+
+# %%
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+# Data preparation
+data = {
+    "J^{su}/J^{sd}": ["Relaxed"] * 6 + ["Binary"] * 6,
+    "Time [mins]": [
+        0.531, 0.598, 0.84, 0.759, 0.77, 0.833,
+        1.217, 1.101, 1.325, 1.293, 1.261, 1.184
+    ]
+}
+
+# # Data preparation
+# data = {
+#     "J^{su}/J^{sd}": ["Relaxed"] * 7 + ["Binary"] * 7,
+#     "Time [mins]": [
+#         0.531, 0.598, 0.84, 0.759, 0.77, 0.833, 1.018,
+#         1.217, 1.101, 1.325, 1.293, 1.261, 1.184, 2.645
+#     ]
+# }
+
+
+df = pd.DataFrame(data)
+
+# Box Plot with Swarm Plot
+plt.figure(figsize=(3, 5))
+# Set theme
+sns.set_style("whitegrid")
+sns.boxplot(x="J^{su}/J^{sd}", y="Time [mins]", data=df, width=0.3, linewidth=2, boxprops={'facecolor': 'none'})
+
+# Set the color of the axes spines (borders)
+ax = plt.gca()
+for spine in ax.spines.values():
+    spine.set_edgecolor('black')  # Change spine color to black
+
+# Set the color of the ticks
+ax.tick_params(axis='both', colors='black')  # Change tick color to black
+
+# Compute the mean values
+means = df.groupby("J^{su}/J^{sd}")["Time [mins]"].mean().reset_index()
+
+# Overlay mean values using a point plot
+sns.pointplot(x="J^{su}/J^{sd}", y="Time [mins]", data=means, join=False, 
+              color='red', markers="x", scale=1)
+
+# Customize plot aesthetics
+for spine in ax.spines.values():
+    spine.set_edgecolor('black')  # Change spine color to black
+ax.tick_params(axis='both', colors='black')  # Change tick color to black
+
+# Set x-axis label with superscripts
+ax.set_xlabel("$u_{jt}^{su}/u_{jt}^{sd}$")
+plt.grid(axis="y", linestyle="-", alpha=0.6)
+plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img13.png", dpi=300, bbox_inches="tight")
+plt.show()
+
+# %%
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+# Data preparation with the new values
+data = {
+    "J^{su}/J^{sd}": ["Relaxed"] * 15 + ["Binary"] * 15,
+    "Time [mins]": [
+        1.606, 1.344, 1.442, 1.327, 1.289, 1.414, 1.878, 1.286, 1.338, 1.806, 
+        1.39, 1.339, 1.356, 1.366, 1.359,  # Relaxed values
+        1.741, 1.329, 1.459, 1.284, 1.259, 2.774, 1.945, 2.301, 1.767, 1.683, 
+        1.552, 1.407, 1.253, 1.349, 1.841   # Binary values
+    ]
+}
+df = pd.DataFrame(data)
+
+# Box Plot with Swarm Plot
+plt.figure(figsize=(3, 5))
+sns.boxplot(x="J^{su}/J^{sd}", y="Time [mins]", data=df, width=0.3, linewidth=2, boxprops={'facecolor': 'none'})
+# sns.violinplot(x="Switch", y="Time [mins]", data=df, linewidth=1.5, cut=0)
+# sns.violinplot(x="Switch", y="Time [mins]", data=df, linewidth=1.5, cut=0)
+
+# Uncomment the next line if you want to add a swarm plot on top of the boxplot
+# sns.stripplot(x="Ramping Constraints", y="Time [mins]", data=df, hue="Ramping Constraints", size=7)
+# sns.violinplot(x="Cost Blocks", y="Time [mins]", data=df, palette=["blue", "black"], linewidth=1.5, cut=0, alpha=.6)
+
+# # Set y-axis ticks every 5 units
+# plt.yticks(range(0, int(df["Time [mins]"].max()) + 3, 3))
+
+# Set the color of the axes spines (borders)
+ax = plt.gca()
+for spine in ax.spines.values():
+    spine.set_edgecolor('black')  # Change spine color to black
+# Set the color of the ticks
+ax.tick_params(axis='both', colors='black')  # Change tick color to black
+
+# Compute the mean values
+means = df.groupby("J^{su}/J^{sd}")["Time [mins]"].mean().reset_index()
+
+# Overlay mean values using a point plot
+sns.pointplot(x="J^{su}/J^{sd}", y="Time [mins]", data=means, join=False, 
+              color='red', markers="x", scale=1)
+
+# Customize plot aesthetics
+for spine in ax.spines.values():
+    spine.set_edgecolor('black')  # Change spine color to black
+ax.tick_params(axis='both', colors='black')  # Change tick color to black
+
+ax.set_xlabel("$u_{jt}^{su}/u_{jt}^{sd}$")
+plt.grid(axis="y", linestyle="--", alpha=0.6)
+plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img14.png", dpi=300, bbox_inches="tight")
 plt.show()
