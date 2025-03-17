@@ -19,10 +19,11 @@ Created on Wed Mar  5 23:07:57 2025
 @author: hussein.sharadga
 """
 
-
+X=[]
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import numpy as np
 
 # Data preparation
 data = {
@@ -66,8 +67,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img1.png", dpi=300, bbox_inches="tight")
 
 plt.show()
-
-
+x=np.array(means)
+print(x[0][1]/x[1][1])
+X.append(x[0][1]/x[1][1])
 # %%
 # # # Data preparation
 # data = {
@@ -134,7 +136,10 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img2.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
+plt.show()
+x=np.array(means)
+print(x[0][1]/x[1][1])
+X.append(x[0][1]/x[1][1])
 # %%
 # import matplotlib.pyplot as plt
 # import seaborn as sns
@@ -230,9 +235,10 @@ plt.show()
 
 
 
-
-
-
+plt.show()
+x=np.array(means)
+print(x[1][1]/x[0][1])
+X.append(x[1][1]/x[0][1])
 # %%
 
 import matplotlib.pyplot as plt
@@ -282,9 +288,10 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img4.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
-
-
+plt.show()
+x=np.array(means)
+print(x[1][1]/x[0][1])
+X.append(x[1][1]/x[0][1])
 # %%
 
 
@@ -331,8 +338,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img5.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
-
+x=np.array(means)
+print(x[0][1]/x[1][1])
+X.append(x[0][1]/x[1][1])
 # %%
 
 import matplotlib.pyplot as plt
@@ -379,9 +387,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img6.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
-
-
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
 # %%
 
 
@@ -428,8 +436,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img7.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
-
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
 # %%
 
 import matplotlib.pyplot as plt
@@ -484,6 +493,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img8.png", dpi=300, bbox_inches="tight")
 plt.show()
 
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
 # %%
 
 import matplotlib.pyplot as plt
@@ -529,8 +541,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img9.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
-
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
 # %%
 
 import matplotlib.pyplot as plt
@@ -585,7 +598,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img10.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
 # %%
 
 import matplotlib.pyplot as plt
@@ -632,7 +647,9 @@ plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img11.
 plt.show()
 
 
-
+x=np.array(means)
+print(x[1][1]/x[0][1])
+X.append(x[1][1]/x[0][1])
 # %%
 
 import matplotlib.pyplot as plt
@@ -687,7 +704,9 @@ plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img12.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-
+x=np.array(means)
+print(x[1][1]/x[0][1])
+X.append(x[1][1]/x[0][1])
 # %%
 
 import matplotlib.pyplot as plt
@@ -747,6 +766,9 @@ plt.grid(axis="y", linestyle="-", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img13.png", dpi=300, bbox_inches="tight")
 plt.show()
 
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
 # %%
 
 import matplotlib.pyplot as plt
@@ -801,3 +823,7 @@ ax.set_xlabel("$u_{jt}^{su}/u_{jt}^{sd}$")
 plt.grid(axis="y", linestyle="--", alpha=0.6)
 plt.savefig(r"C:\Users\hussein.sharadga\Desktop\OptX\TPEC Paper\Pics_mean\img14.png", dpi=300, bbox_inches="tight")
 plt.show()
+
+x=np.array(means)
+print(1/(x[1][1]/x[0][1]))
+X.append(1/(x[1][1]/x[0][1]))
